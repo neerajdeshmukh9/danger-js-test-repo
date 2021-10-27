@@ -1,0 +1,21 @@
+<div class="container">
+
+    <br><br>
+    <button class="btn btn-success" (click)='getPosts()'>Get Posts</button>
+    <hr>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Post</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let post of posts'>
+                <td>{{ post.title }}</td>
+                <td>{{ post.body }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
