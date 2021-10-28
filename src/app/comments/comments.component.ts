@@ -7,24 +7,34 @@ import { PostsService } from '../services/posts.service';
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.css']
 })
-export class CommentsComponent implements OnInit {
+export class CommentsComponent{
 
   comments: Comment[] = [];
-  
-  constructor(private postService: PostsService) { }
+  flag : boolean = true;
 
-  ngOnInit(): void {
+  constructor(private postService: PostsService) {
 
-    this.getComments();
-
-  }
-
-  getComments()
-  {
-    this.postService.getComments().subscribe((data)=>{
-        this.comments=data;
-   });
+    this.flag = false;
 
   }
+
+  // ngOnInit(): void {
+
+  //   this.getComments();
+
+  // }
+
+  // getComments()
+  // {
+  //   this.postService.getComments().subscribe((data)=>{
+  //       this.comments=data;
+  //  });
+
+  // }
+
+  onClick() {
+      this.flag = !this.flag;
+  }
+
 
 }

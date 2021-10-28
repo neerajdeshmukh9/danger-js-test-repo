@@ -1,4 +1,6 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { PostsService } from '../services/posts.service';
 
 import { CommentsComponent } from './comments.component';
 
@@ -8,7 +10,9 @@ describe('CommentsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommentsComponent ]
+      imports : [HttpClientModule],
+      declarations: [ CommentsComponent ],
+      providers : [PostsService]
     })
     .compileComponents();
   }));
@@ -19,7 +23,17 @@ describe('CommentsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  // it('should create', () => {
+  //   expect(component).toBeTruthy();
+  // });
+
+  it("should toggle the flag", ()=>{
+      component.onClick();
+      expect(component.flag).toBe(true);
+      component.onClick();
+      expect(component.flag).toBe(false);
+      component.onClick();
+      expect(component.flag).toBe(true);
   });
+
 });
