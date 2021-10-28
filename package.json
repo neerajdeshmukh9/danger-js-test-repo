@@ -36,6 +36,7 @@
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
     "danger-plugin-code-coverage": "^1.1.8",
+    "danger-plugin-istanbul-coverage": "^1.6.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~5.0.0",
